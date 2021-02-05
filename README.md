@@ -1,4 +1,8 @@
 # Group-2-Thiccer
+
+#Product Discription
+Thiccer is a social networking application that allows users to connect. This is a project to help our group learn how to work in a group and use peers to accomplish a goal that one could not do on their own. 
+
 # Group Members:
 
 Wesley Carter      
