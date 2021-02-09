@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import LargeTextInput from '../components/LargeTextInput'
-import Alert from '../components/Alert'
+
 
 
 export default function Home() {
