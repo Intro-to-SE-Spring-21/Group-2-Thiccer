@@ -25,6 +25,7 @@ app.get("/health", async (req, res) => {
 });
 
 app.post("/post", async (req, res) => {
+    console.log(req.body);
     const results = await dbPost.createPost(req.body);
     res.status(201).json({
         PID: results[0]
