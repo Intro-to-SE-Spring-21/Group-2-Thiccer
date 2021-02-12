@@ -11,7 +11,6 @@ export default function Home() {
         <meta name='keywords' content='socialmedia'></meta>
       </Head>
       <LargeTextInput className = ""></LargeTextInput>
-      <Alert></Alert>
     </div>
   )
 }
