@@ -10,8 +10,20 @@ function getAllPosts() {
 };
 
 
+//very inefficient
+function likeRequest(body){
+    var post = knex("posts").select("*").where({PID: body.PID})
+    return post;
+}
+function likePost(body,likes){
+    var post = knex("posts").where({PID: body.PID}).update({Likes: likes})
+    return post;
+}
+
 //Add all functions here
 module.exports = {
     createPost,
-    getAllPosts
+    getAllPosts,
+    likeRequest,
+    likePost
 }

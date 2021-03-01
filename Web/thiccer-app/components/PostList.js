@@ -6,7 +6,7 @@ const PostList = ({postArray}) => {
         <div className={postStyles.grid}>
 
         {postArray.map ((postArray) => (
-            <PostItem postArray = {postArray}/>
+            <PostItem post = {postArray}/>
         ))}
 
         </div>
