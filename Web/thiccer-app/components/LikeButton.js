@@ -1,18 +1,20 @@
-var pid;
+
 const LikeButton = ({postID}) =>{
-    pid = postID;
-    console.log(postID);
     return(
-        <button onClick={hitAPI}>Like</button>
+        <button id={postID} onClick={hitAPI}>Like</button>
     )
 }
 
 const hitAPI = async (event)  =>{
     event.preventDefault();
-    console.log(pid);
+    var x = event.clientX
+    var y = event.clientY
+    document.elementFromPoint(x,y)
+
+    var pid = document.elementFromPoint(x,y).id
     const jsonPackage = JSON.stringify({
             "UID": 1,
-            "PID": postID
+            "PID": pid
         });
 
     console.log(jsonPackage);
