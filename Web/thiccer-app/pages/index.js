@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import PostList  from '../components/PostList'
+import cookie from "cookie"
 
 {/*Not sure why posts is acting weird here. Def wanna look into that.*/}
 

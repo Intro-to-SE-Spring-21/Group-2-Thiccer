@@ -1,10 +1,13 @@
 import Layout from '../components/Layout'
 import '../styles/globals.css'
+import {CookiesProvider} from "react-cookie"
 
 function MyApp({ Component, pageProps }) {
   return (
   <Layout>
-    <Component{...pageProps} />
+    <CookiesProvider>
+      <Component{...pageProps} />
+    </CookiesProvider>
   </Layout>
   )
 }
