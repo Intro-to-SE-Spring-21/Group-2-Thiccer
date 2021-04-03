@@ -6,7 +6,7 @@ var likes;
 const postItem = ({post}) => {
     return(
         <a className={postStyles.card} PID={post.PID}>
-            <h3>{post.UID}</h3>
+            <h3>{post.User}</h3>
             <p>{post.Content}</p>
             <hr></hr>
             <p>Likes: {GetLikeCount(post.Likes)}</p>

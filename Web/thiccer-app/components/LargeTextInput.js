@@ -29,8 +29,10 @@ const LargeTextInput = () => {
 const hitAPI = async event => {
     event.preventDefault();
 
+    var user = getcurUser()
+    console.log(user)
     const jsonPackage = JSON.stringify({
-            "UID": 0,
+            "User": ""+user,
             "Content": userInput,
             "Date" : "0"
         });
@@ -48,6 +50,29 @@ const hitAPI = async event => {
     const result = await res.json();
     
     console.log(result);
+}
+
+function getcurUser(){
+    var curUser = getCookie("user");
+    if(curUser == "" || curUser == null){
+        curUser = "Anon"
+    }
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
 
 export default LargeTextInput

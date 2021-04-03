@@ -15,23 +15,79 @@ return(
 )
 }
 
-const createAccount = async event => {
-    //event.preventDefault();
-    var usernameElement = document.getElementById("txtUser")
-    var passwordElement = document.getElementById("txtPass")
-    console.log(usernameElement.value)
-    //Check if user exists
-    //check password
-    saveCookie(usernameElement.value)
+const createAccount = async (event) => {
+  event.preventDefault();
+  var usernameElement = document.getElementById("txtUser");
+  var passwordElement = document.getElementById("txtPass");
+  console.log(usernameElement.value);
+  //Check if user exists
+  const jsonPackage = JSON.stringify({
+    "Name": usernameElement.value,
+  });
+  const res = await fetch(
+    'http://localhost:1337/userByName',
+    {
+      method: 'POST',
+      headers: {"Content-Type": "application/json" },
+      body: jsonPackage
+    }
+  );
+  var fromDB = await res.json()
+  console.log(fromDB.user);
+  
+  if(fromDB.user.length == 0){
+    console.log("Createing New Account")
+      //create user
+      saveCookie(usernameElement.value)
+      const jsonPackage = JSON.stringify({
+        "Name": usernameElement.value,
+        "Password": passwordElement.value
+      });
+      console.log(jsonPackage);
+      const res = await fetch(
+        'http://localhost:1337/user',
+        {
+          method: 'POST',
+          headers: {"Content-Type": "application/json" },
+          body: jsonPackage
+        }
+      );
+  }
+  window.location.reload();
 }
-const login = async event => {
+const login = async (event) => {
     event.preventDefault();
-    var usernameElement = document.getElementById("txtUser")
-    var passwordElement = document.getElementById("txtPass")
-    console.log(usernameElement.value)
+    var usernameElement = document.getElementById("txtUser");
+    var passwordElement = document.getElementById("txtPass");
+
     //Check if user exists
-    //check password
-   //saveCookie(usernameElement.value)
+    const jsonPackage = JSON.stringify({
+      "Name": usernameElement.value,
+    });
+    const res = await fetch(
+      'http://localhost:1337/userByName',
+      {
+        method: 'POST',
+        headers: {"Content-Type": "application/json" },
+        body: jsonPackage
+      }
+    );
+    var fromDB = await res.json()
+    console.log(fromDB);
+    try{
+      if(fromDB.user[0].Name == usernameElement.value){
+        if(fromDB.user[0].Password == passwordElement.value){
+          saveCookie(usernameElement.value)
+        }else{
+          console.log("bad pass")
+        }
+      }else{
+        console.log("non existant")
+      }
+    }catch(e){
+      console.log(e)
+    }
+    window.location.reload();
 }
 
 function saveCookie(accountName){

@@ -9,7 +9,6 @@ function getAllPosts() {
     return knex("posts").select("*")
 };
 
-
 //very inefficient
 function likeRequest(body){
     var post = knex("posts").select("*").where({PID: body.PID})
