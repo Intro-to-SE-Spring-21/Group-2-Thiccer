@@ -26,7 +26,7 @@ const hitAPI = async (event)  =>{
             body: jsonPackage
         }
     );
-    location.reload();
+    window.location.reload();
     }
 
 

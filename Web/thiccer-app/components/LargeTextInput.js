@@ -29,10 +29,11 @@ const LargeTextInput = () => {
 const hitAPI = async event => {
     event.preventDefault();
 
-    var user = getcurUser()
-    console.log(user)
+    var user = getcurUser();
+
+    console.log(user);
     const jsonPackage = JSON.stringify({
-            "User": ""+user,
+            "User": user,
             "Content": userInput,
             "Date" : "0"
         });
@@ -57,6 +58,7 @@ function getcurUser(){
     if(curUser == "" || curUser == null){
         curUser = "Anon"
     }
+    return curUser;
 }
 
 function getCookie(cname) {
