@@ -1,5 +1,6 @@
 import React from 'react';
-import inputStyles from '../styles/LargeTextInput.module.css'
+import styles from '../styles/LargeTextInput.module.css'
+import btnstyles from '../styles/Button.module.css'
 
 var userInput;
 
@@ -10,18 +11,19 @@ const getValue = (event) => {
 
 const LargeTextInput = () => {
     return(
-        <>
+        <div className={styles.container}>
             <form action="">
                 <div>
+                    <h2 className={styles.headText}>Create A Thiccer Post!</h2>
                     <lable htmlFor=""></lable>
                     <textarea
                         maxLength = "250"
-                        className={inputStyles.textarea}
+                        className={styles.textarea}
                         onChange = {getValue}/>
                 </div>
-                    <button onClick={hitAPI}>Submit</button>
+                    <button className={btnstyles.button} onClick={hitAPI}>Submit</button>
             </form>
-        </>
+        </div>
     )
 }
 
@@ -30,12 +32,12 @@ const hitAPI = async event => {
     event.preventDefault();
 
     var user = getcurUser();
-
+    var time = getcurTime();
     console.log(user);
     const jsonPackage = JSON.stringify({
             "User": user,
             "Content": userInput,
-            "Date" : "0"
+            "Date" : time
         });
 
     console.log(jsonPackage);
@@ -50,15 +52,23 @@ const hitAPI = async event => {
     
     const result = await res.json();
     
-    console.log(result);
+    window.location.replace('./');
 }
 
 function getcurUser(){
     var curUser = getCookie("user");
     if(curUser == "" || curUser == null){
-        curUser = "Anon"
+        curUser = "Anon";
     }
     return curUser;
+}
+
+function getcurTime(){
+    var d = new Date();
+    //Day Month Year Cooler
+    var str = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+    console.log(str);
+    return str;
 }
 
 function getCookie(cname) {

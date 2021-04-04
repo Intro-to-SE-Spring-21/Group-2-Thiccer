@@ -1,8 +1,11 @@
+import styles from '../styles/ProfileDisplay.module.css'
+import btnstyles from '../styles/Button.module.css'
+
 const ProfileDisplay = () => {
     return(
-        <div>
-            <h1>ProfileName:{getCookie("user")}</h1>
-            <button onClick={logOut}>Log Out</button>
+        <div className={styles.containerBox}>
+            <h1 className={styles.headText}>ProfileName: {getCookie("user")}</h1>
+            <button className={btnstyles.button} onClick={logOut}>Log Out</button>
         </div>
     )
 }

@@ -6,11 +6,18 @@ var likes;
 const postItem = ({post}) => {
     return(
         <a className={postStyles.card} PID={post.PID}>
-            <h3>{post.User}</h3>
-            <p>{post.Content}</p>
+            <div className={postStyles.UserInfo} >
+                <h3>{post.User}</h3>
+            </div>
+            <p style={{ wordBreak: 'break-all' }}>{post.Content}</p>
             <hr></hr>
-            <p>Likes: {GetLikeCount(post.Likes)}</p>
-            <LikeButton postID = {post.PID}/>
+            <div className = {postStyles.PostFooter}>
+                <div className = {postStyles.LikesContainer}>
+                    <LikeButton postID = {post.PID}/>
+                    <p className={postStyles.Likes}>{GetLikeCount(post.Likes)}</p>
+                </div>
+                <p className={postStyles.Date}>{post.Date}</p>
+            </div>
         </a>
     )
 }

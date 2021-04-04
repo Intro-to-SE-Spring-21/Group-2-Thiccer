@@ -1,15 +1,16 @@
-import { useCookies } from "react-cookie"
+import btnstyles from '../styles/Button.module.css'
+import styles from '../styles/LogIn.module.css'
 
 const LogIn = () => {
 return(
   <form id="login">
-      <div className = "containerBox">
-        <h3>User:</h3>
-        <input type="text" className="text" id="txtUser"></input><br/>
-        <h3>Password:</h3>
-        <input type="password" className="text" id="txtPass"></input><br/>
-        <button onClick={login} className="button" id="btnlogin">Login</button>
-        <button onClick={createAccount} className="button" id="btnCreate">Create Account</button>
+      <div className = {styles.containerBox}>
+        <h3 className = {styles.headText}>User:</h3>
+        <input type="text" className={styles.text} id="txtUser"></input><br/>
+        <h3 className = {styles.headText}>Password:</h3>
+        <input type="password"  className={styles.text}  id="txtPass"></input><br/>
+        <button onClick={login} className={btnstyles.button} id="btnlogin">Login</button>
+        <button onClick={createAccount} className={btnstyles.button} id="btnCreate">Create Account</button>
       </div>
   </form>
 )

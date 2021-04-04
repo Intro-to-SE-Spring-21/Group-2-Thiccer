@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
+//Needs Style Sheet
 
 const DynamicComponetWithNoSSR = dynamic(
   () => import ('../components/ProfileMain'),
