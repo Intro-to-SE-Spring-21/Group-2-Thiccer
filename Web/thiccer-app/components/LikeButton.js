@@ -1,7 +1,15 @@
 
+
+
+
+
+import likeStyles from '../styles/Posts.module.css'
+
 const LikeButton = ({postID}) =>{
     return(
-        <button id={postID} onClick={hitAPI}>Like</button>
+        <div className = {likeStyles.likebutton}>
+       <span> <a href="#0" class = "likebutton" id={postID} onClick={hitAPI}>Like!</a></span>
+        </div>
     )
 }
 

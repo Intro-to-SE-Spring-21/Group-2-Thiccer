@@ -1,7 +1,9 @@
 import React from 'react';
+import postStyles from '../styles/LargeTextInput.module.css'
 import inputStyles from '../styles/LargeTextInput.module.css'
 
 var userInput;
+
 
 const getValue = (event) => {
      userInput = event.target.value;
@@ -10,16 +12,23 @@ const getValue = (event) => {
 
 const LargeTextInput = () => {
     return(
-        <>
+        <><h1 class = {postStyles.posthead}> Post Something Thicc!</h1>
             <form action="">
+
                 <div>
                     <lable htmlFor=""></lable>
                     <textarea
                         maxLength = "250"
                         className={inputStyles.textarea}
                         onChange = {getValue}/>
+
                 </div>
-                    <button onClick={hitAPI}>Submit</button>
+
+                <div className = {postStyles.postbutton}>
+
+                <a href="#0"onClick={hitAPI}><span>Post</span></a>
+
+                    </div>
             </form>
         </>
     )

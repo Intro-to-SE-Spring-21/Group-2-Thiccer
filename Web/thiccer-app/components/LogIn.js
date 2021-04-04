@@ -1,15 +1,31 @@
 import { useCookies } from "react-cookie"
+import logStyles from '../styles/profile.module.css'
+import postStyles from '../styles/Posts.module.css'
+import styles from '../styles/profile.module.css'
+
 
 const LogIn = () => {
 return(
   <form id="login">
-      <div className = "containerBox">
-        <h3>User:</h3>
+     <h1>Welcome to Thiccer!</h1>
+
+      <div className = {styles.containerBox}>
+ 
+
+        <h3 class = {logStyles.loghead}>User:</h3>
         <input type="text" className="text" id="txtUser"></input><br/>
-        <h3>Password:</h3>
+
+        <h3 class = {logStyles.loghead}>Password:</h3>
         <input type="password" className="text" id="txtPass"></input><br/>
-        <button onClick={login} className="button" id="btnlogin">Login</button>
-        <button onClick={createAccount} className="button" id="btnCreate">Create Account</button>
+
+        <div className = {logStyles.logbutton}>
+        <span><a href="#0" onClick={login} className="button" id="btnlogin">Login</a></span>
+        </div>
+
+          <div className = {logStyles.logbutton2}>
+          <span> <a href="#0" onClick={createAccount} className="button" id="btnCreate">Create Account</a></span>
+        </div>
+
       </div>
   </form>
 )

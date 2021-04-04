@@ -1,7 +1,10 @@
 import postStyles from '../styles/Posts.module.css'
+import header from '../styles/Posts.module.css'
 import LikeButton from './LikeButton'
 
 var likes;
+
+<h1 class = {header.sitehead}>Thiccer.</h1>
 
 const postItem = ({post}) => {
     return(

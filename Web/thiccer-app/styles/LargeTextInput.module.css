@@ -1,3 +1,4 @@
+
 .textarea {
     background-color: #457B9D;
     color: #F1FAEE;
@@ -11,3 +12,62 @@
     height: 10vh;
     width: 40vw;
 }
+
+.postbutton {
+   
+    display: inline-block;
+    background-color: #1a013d;
+    border-radius: 10px;
+    border: 4px double #f8f3f3;
+    color: #efeef1;
+    text-align: center;
+    text-decoration: none;
+    font-size: 28px;
+    padding: -5px;
+    height: 50px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 6px;
+    
+  }
+  .postbutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .postbutton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .postbutton:hover {
+    background-color: #234483;
+  }
+  .postbutton:hover span {
+    padding-right: 25px;
+  }
+  .postbutton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .posthead {
+    background-color: #234483;
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+
+  }
+
+  .sitehead {
+    background-color: #234483;
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+
+  }

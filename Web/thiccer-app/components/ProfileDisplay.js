@@ -1,5 +1,8 @@
+
+
 const ProfileDisplay = () => {
     return(
+        
         <div>
             <h1>ProfileName:{getCookie("user")}</h1>
             <button onClick={logOut}>Log Out</button>

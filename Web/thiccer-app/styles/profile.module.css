@@ -1,0 +1,105 @@
+.logbutton {
+    
+   
+    display: inline-block;
+    background-color: #1a013d;
+    border-radius: 10px;
+    border: 4px double #f8f3f3;
+    color: #efeef1;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 5px;
+    height: 50px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: px;
+    right: 20px;
+    position:relative;
+    
+  }
+  .logbutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    top: 20%;
+  }
+  .logbutton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+  }
+  .logbutton:hover {
+    background-color: #234483;
+  }
+  .logbutton:hover span {
+    padding-right: 25px;
+  }
+  .logbutton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .logbutton2 {
+    
+   
+    display: inline-block;
+    background-color: #1a013d;
+    border-radius: 10px;
+    border: 4px double #f8f3f3;
+    color: #efeef1;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px;
+    height: 50px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    top: 25px;
+
+  }
+  .logbutton2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    bottom: 10%;
+  }
+  .logbutton2 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+  }
+  .logbutton2:hover {
+    background-color: #234483;
+  }
+  .logbutton2:hover span {
+    padding-right: 25px;
+  }
+  .logbutton2:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .loghead {
+    background: none;
+    color: white;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size:large;
+    text-align: left;
+
+  }
+
+  .containterBox{
+      text-align: center;
+      background-color: black;
+  }
