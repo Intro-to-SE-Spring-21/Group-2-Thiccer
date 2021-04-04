@@ -4,10 +4,14 @@ function createPost(post) {
     return knex("posts").insert(post)
 };
 
-//For Testing DONT USE IN CODE
+//For Testing DONT USE IN CODE minus home bc alg = hard :)
 function getAllPosts() {
     return knex("posts").select("*")
 };
+
+function getAllPostsByUser() {
+    return knex("posts").select("*").where({User: body.user})
+}
 
 //very inefficient
 function likeRequest(body){
@@ -24,5 +28,6 @@ module.exports = {
     createPost,
     getAllPosts,
     likeRequest,
+    getAllPostsByUser,
     likePost
 }
