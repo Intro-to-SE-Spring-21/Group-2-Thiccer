@@ -19,6 +19,7 @@
     transition: color 0.15s ease, border-color 0.15s ease;
     background-color: #457B9D;
     color: #F1FAEE;
+    flex-wrap: wrap;
 }
 
 .card:hover,
@@ -37,6 +38,24 @@
     margin: 0;
     font-size: 1.25rem;
     line-height: 1.5;
+}
+
+.PostFooter {
+    display: flex;
+}
+
+.LikesContainer {
+    text-align: start;
+    width: 50vw;
+}
+
+.Likes {
+    display: inline;
+    padding-left: 5px;
+}
+
+.Date {
+    padding-left: 50%;
 }
 
 .logo {

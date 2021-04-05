@@ -40,6 +40,7 @@ app.get("/post", async (req, res) => {
 });
 
 app.post("/user", async (req, res) => {
+    console.log(req)
     const results = await dbUser.createUser(req.body);
     res.status(201).json({
         UID: results[0]
@@ -48,10 +49,28 @@ app.post("/user", async (req, res) => {
 
 app.get("/user", async (req, res) => {
     const users = await dbUser.getAllUsers();
-    res.status(201).json({
+    res.status(200).json({
         users
     });
 });
+
+app.post("/userByName", async (req, res) => {
+    const user = await dbUser.getSpecificUser(req.body);
+    console.log(user);
+    res.status(200).json({
+        user
+    });
+});
+
+app.post("/userByUID", async (req, res) => {
+    const user = await dbUser.getSpecificUserByID(req.body);
+    console.log(user);
+    res.status(200).json({
+        user
+    });
+});
+
+
 
 app.post("/LikePost", async (req, res) => {
     console.log(req.body);

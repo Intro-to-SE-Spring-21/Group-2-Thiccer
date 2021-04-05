@@ -1,7 +1,8 @@
 
+import styles from '../styles/Button.module.css'
 const LikeButton = ({postID}) =>{
     return(
-        <button id={postID} onClick={hitAPI}>Like</button>
+        <button className={styles.button} id={postID} onClick={hitAPI}>Like</button>
     )
 }
 
@@ -26,7 +27,7 @@ const hitAPI = async (event)  =>{
             body: jsonPackage
         }
     );
-    location.reload();
+    window.location.reload();
     }
 
 

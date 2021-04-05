@@ -1,0 +1,11 @@
+.containerBox {
+    background-color: #457B9D;
+    width: 40vw;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.headText {
+    color: #F1FAEE;
+}

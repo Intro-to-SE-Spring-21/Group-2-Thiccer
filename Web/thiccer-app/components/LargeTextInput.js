@@ -1,5 +1,6 @@
 import React from 'react';
-import inputStyles from '../styles/LargeTextInput.module.css'
+import styles from '../styles/LargeTextInput.module.css'
+import btnstyles from '../styles/Button.module.css'
 
 var userInput;
 
@@ -10,18 +11,19 @@ const getValue = (event) => {
 
 const LargeTextInput = () => {
     return(
-        <>
+        <div className={styles.container}>
             <form action="">
                 <div>
+                    <h2 className={styles.headText}>Create A Thicc Post!</h2>
                     <lable htmlFor=""></lable>
                     <textarea
                         maxLength = "250"
-                        className={inputStyles.textarea}
+                        className={styles.textarea}
                         onChange = {getValue}/>
                 </div>
-                    <button onClick={hitAPI}>Submit</button>
+                    <button className={btnstyles.button} onClick={hitAPI}>Submit</button>
             </form>
-        </>
+        </div>
     )
 }
 
@@ -29,10 +31,13 @@ const LargeTextInput = () => {
 const hitAPI = async event => {
     event.preventDefault();
 
+    var user = getcurUser();
+    var time = getcurTime();
+    console.log(user);
     const jsonPackage = JSON.stringify({
-            "UID": 0,
+            "User": user,
             "Content": userInput,
-            "Date" : "0"
+            "Date" : time
         });
 
     console.log(jsonPackage);
@@ -47,7 +52,39 @@ const hitAPI = async event => {
     
     const result = await res.json();
     
-    console.log(result);
+    window.location.replace('./');
+}
+
+function getcurUser(){
+    var curUser = getCookie("user");
+    if(curUser == "" || curUser == null){
+        curUser = "Anon";
+    }
+    return curUser;
+}
+
+function getcurTime(){
+    var d = new Date();
+    //Day Month Year Cooler
+    var str = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+    console.log(str);
+    return str;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
 
 export default LargeTextInput

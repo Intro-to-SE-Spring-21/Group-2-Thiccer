@@ -5,7 +5,7 @@ const PostList = ({postArray}) => {
     return (
         <div className={postStyles.grid}>
 
-        {postArray.map ((postArray) => (
+        {postArray.slice(0).reverse().map((postArray) => (
             <PostItem post = {postArray}/>
         ))}
 
