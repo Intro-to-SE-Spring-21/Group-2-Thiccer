@@ -14,7 +14,7 @@ const LargeTextInput = () => {
         <div className={styles.container}>
             <form action="">
                 <div>
-                    <h2 className={styles.headText}>Create A Thiccer Post!</h2>
+                    <h2 className={styles.headText}>Create A Thicc Post!</h2>
                     <lable htmlFor=""></lable>
                     <textarea
                         maxLength = "250"

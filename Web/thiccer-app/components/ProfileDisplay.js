@@ -4,7 +4,7 @@ import btnstyles from '../styles/Button.module.css'
 const ProfileDisplay = () => {
     return(
         <div className={styles.containerBox}>
-            <h1 className={styles.headText}>ProfileName: {getCookie("user")}</h1>
+            <h1 className={styles.headText}>User Name: {getCookie("user")}</h1>
             <button className={btnstyles.button} onClick={logOut}>Log Out</button>
         </div>
     )
